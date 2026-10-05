@@ -1,5 +1,6 @@
 use crate::{error::Error, PlaySoundParams};
 
+#[link(wasm_import_module = "env")]
 extern "C" {
     fn audio_init();
     fn audio_add_buffer(content: *const u8, content_len: u32) -> u32;
