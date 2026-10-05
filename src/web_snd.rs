@@ -46,7 +46,7 @@ impl Playback {
 impl Sound {
     pub fn load(_ctx: &AudioContext, data: &[u8]) -> Result<Sound, Error> {
         let buffer = unsafe { audio_add_buffer(data.as_ptr(), data.len() as u32) };
-        Sound(buffer)
+        Ok(Sound(buffer))
     }
 
     /// WASM requirement - sound may be used only after it is is_loaded

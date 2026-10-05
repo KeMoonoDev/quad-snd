@@ -20,7 +20,7 @@ pub struct Sound;
 
 impl Sound {
     pub fn load(_data: &[u8]) -> Result<Sound, Error> {
-        Sound
+        Ok(Sound)
     }
 
     pub fn play(&self, _ctx: &AudioContext, _params: PlaySoundParams) -> Playback {
